@@ -1,0 +1,53 @@
+﻿@page
+@using System.Data
+@model Music_project.Pages.PlaylistModel
+@{
+    // public DataSet GetAllSongs()
+
+    DataSet ds = new DataSet("playlist");
+
+    DataTable songs = new DataTable("song");
+
+    DataColumn id = new DataColumn("id");
+    DataColumn artist = new DataColumn("artist");
+    DataColumn title = new DataColumn("title");
+    DataColumn year = new DataColumn("year");
+
+    songs.Columns.Add(id);
+    songs.Columns.Add(artist);
+    songs.Columns.Add(title);
+    songs.Columns.Add(year);
+
+    ds.Tables.Add(songs);
+
+    ds.ReadXml("Data/playlist.xml");
+
+
+}
+<header><h1>Dit is de playlist pagina</h1></header>
+<table style=border:3px>
+    <tr>
+        <td>
+            Naam van het liedje
+        </td>
+        <td>
+            Info liedje
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Name song
+        </td>
+        <td>
+            Info Song
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @foreach (DataRow dr in ds.Tables["song"].Rows)
+            {
+                <div>@dr["artist"]</div>
+            }
+        </td>
+        </tr>
+</table>
