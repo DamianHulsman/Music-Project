@@ -41,13 +41,13 @@
         <td>
             Info Song
         </td>
-    </tr>
-    <tr>
-        <td>
-            @foreach (DataRow dr in ds.Tables["song"].Rows)
-            {
-                <div>@dr["artist"]</div>
-            }
-        </td>
+    </tr>   
+    @foreach (DataRow dr in ds.Tables["song"].Rows)
+    {
+        <tr>
+            <td>@dr["artist"]</td>
+            <td>@dr["title"]</td>
         </tr>
+    }
+        
 </table>
