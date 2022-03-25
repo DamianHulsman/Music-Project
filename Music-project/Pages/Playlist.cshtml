@@ -25,21 +25,16 @@
 
 }
 <header><h1>Dit is de playlist pagina</h1></header>
-<table style=border:3px>
+<table id="playlisttable">
     <tr>
         <td>
-            Naam van het liedje
+            name artist/band
         </td>
         <td>
-            Info liedje
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Name song
+            title song
         </td>
         <td>
-            Info Song
+            year of release
         </td>
     </tr>   
     @foreach (DataRow dr in ds.Tables["song"].Rows)
@@ -47,6 +42,7 @@
         <tr>
             <td>@dr["artist"]</td>
             <td>@dr["title"]</td>
+            <td>@dr["year"]</td>
         </tr>
     }
         
