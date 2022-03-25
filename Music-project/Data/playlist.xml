@@ -2,18 +2,18 @@
 <playlist>
 	<song>
 		<id>1</id>
-		<artist>test</artist>
+		<artist>Twenty One Pilots</artist>
+		<title>Stressed Out</title>
+		<year>2016</year>
+		<genre>Rap-rock</genre>
+		<time>3:22</time>
 	</song>
 	<song>
 		<id>2</id>
-		<artist>test2</artist>
-	</song>
-	<song>
-		<id>3</id>
-		<artist>test3</artist>
-	</song>
-	<song>
-		<id>4</id>
-		<artist>test4</artist>
+		<artist>Twenty One Pilots</artist>
+		<title>Heathens</title>
+		<year>2016</year>
+		<genre>Rap-rock</genre>
+		<time>3:15</time>
 	</song>
 </playlist>
