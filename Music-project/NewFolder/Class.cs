@@ -16,7 +16,20 @@ namespace Music_project.NewFolder
             DataColumn dcYear = new DataColumn("year");
             DataColumn dcGenre = new DataColumn("genre");
             DataColumn dcTime = new DataColumn("time");
+            
+            dtSongs.Columns.Add(dcId);
+            dtSongs.Columns.Add(dcArtist);
+            dtSongs.Columns.Add(dcTitle);
+            dtSongs.Columns.Add(dcYear);
+            dtSongs.Columns.Add(dcGenre);
+            dtSongs.Columns.Add(dcTime);
 
-        }
+            ds.Tables.Add(dtSongs);
+
+            ds.ReadXml(Environment.CurrentDirectory + file);
+
+            return ds;
+        }   
+
     }
 }
