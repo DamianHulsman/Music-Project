@@ -1,4 +1,6 @@
-﻿namespace Music_project.NewFolder
+﻿using System.Data;
+
+namespace Music_project.NewFolder
 {
     public class songMethods
     {
@@ -11,8 +13,10 @@
             DataColumn dcId = new DataColumn("id");
             DataColumn dcArtist = new DataColumn("artist");
             DataColumn dcTitle = new DataColumn("title");
-            DataColmn dcYear = new DataColmn("year");
-            DataColumn dcGenre =
+            DataColumn dcYear = new DataColumn("year");
+            DataColumn dcGenre = new DataColumn("genre");
+            DataColumn dcTime = new DataColumn("time");
+
         }
     }
 }
