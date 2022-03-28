@@ -27,11 +27,15 @@
 <header><h1>Dit is de playlist pagina</h1></header>
 <table id="playlisttable">
     <tr>
+        <td></td>
         <td>
             <a asp-page="/addsong">click here to add a song</a>
         </td>
     </tr>
     <tr>
+        <td>
+            id
+        </td>
         <td>
             name artist/band
         </td>
@@ -45,6 +49,7 @@
     @foreach (DataRow dr in ds.Tables["song"].Rows)
     {
         <tr>
+            <td>@dr["id"]</td>
             <td>@dr["artist"]</td>
             <td>@dr["title"]</td>
             <td>@dr["year"]</td>
