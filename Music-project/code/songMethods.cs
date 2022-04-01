@@ -35,8 +35,14 @@ namespace Music_project.NewFolder
         }   
         public DataRow GetEmptyDataRow()
         {
-            DataRow dr = DataSet.Tables["song"].NewRow();
+            DataRow dr = ds.Tables["song"].NewRow();
             return dr;
         }
+        public void AddNewRow( DataRow dr)
+        {
+            ds.Tables["song"].Rows.Add(dr);
+            ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
+        }
+
     }
 }
