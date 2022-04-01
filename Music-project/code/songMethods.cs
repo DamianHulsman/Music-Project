@@ -2,11 +2,11 @@
 
 namespace Music_project.NewFolder
 {
-    public class songMethods
+    public class songMethods   
     {
+        private DataSet ds = new DataSet("playlist");
         public DataSet GetAllSongs(string file)
         {
-            DataSet ds = new DataSet("playlist");
 
             DataTable dtSongs = new DataTable("song");
 
@@ -27,11 +27,16 @@ namespace Music_project.NewFolder
             ds.Tables.Add(dtSongs);
             try
             {
-                ds.ReadXml(Environment.CurrentDirectory + "playlist.xml");
+                ds.ReadXml(Environment.CurrentDirectory + "/Data/playlist.xml");
             }
             catch
             { }
             return ds;
         }   
+        public DataRow GetEmptyDataRow()
+        {
+            DataRow dr = DataSet.Tables["song"].NewRow();
+            return dr;
+        }
     }
 }

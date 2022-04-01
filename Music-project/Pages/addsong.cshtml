@@ -1,4 +1,6 @@
 ﻿@page
+@using Music_project.NewFolder
+@using System.Data
 @model Music_project.Pages.addsongModel
 @{
 
@@ -11,43 +13,59 @@
         string artist = Request.Form["artist"];
         string YOR = Request.Form["YOR"];
 
+        //gegevens in een datarow zetten
+        songMethods sm = new songMethods();
+        DataRow newDr = sm.GetEmptyDataRow();
+        newDr["id"] = id;
+        newDr["song"] = song;
+        newDr["artist"] = artist;
+        newDr["YOR"] = YOR;
 
+        //de datarow toevoegen aan de datatable
+        sm.AddNewRow(newDr);
+
+        // de dataset ( database) opnieuw wegschrijven
+        sm.WriteDataToFile();
+
+        // terugspringen naar de index pagina
+        Response.Redirect("Index");
     }
 
 }
 
-
-<table class="table table-hover table-striped">
-<tr>
-        <td>
-            <label>id</label>
-        </td>
-        <td>
-            <input name="id" type="text" />
-        </td>
-    </tr><tr>
-        <td>
-            <label>song</label>
-        </td><td>
-            <input name="song" type="text">
-        </td>
-    </tr><tr>
-        <td>
-            <label>artist</label>
-        </td>
-        <td>
-            <input name="artist" type="text" />
-        </td>
-    </tr><tr>
-        <td>
-            <label>Year of release</label>
-        </td><td>
-            <input name="YOR" type="text">
-        </td>
-    </tr><tr>
-        <td></td>
-        <td>
-            <input type="submit" />
-        </td>
-    </tr>
-</table>
+<form method="post">
+    <table class="table table-hover table-striped">
+        <tr>
+            <td>
+                <label>id</label>
+            </td>
+            <td>
+                <input name="id" type="text" />
+            </td>
+        </tr><tr>
+            <td>
+                <label>song</label>
+            </td><td>
+                <input name="song" type="text">
+            </td>
+        </tr><tr>
+            <td>
+                <label>artist</label>
+            </td>
+            <td>
+                <input name="artist" type="text" />
+            </td>
+        </tr><tr>
+            <td>
+                <label>Year of release</label>
+            </td><td>
+                <input name="YOR" type="text">
+            </td>
+        </tr><tr>
+            <td></td>
+            <td>
+                <input type="submit" />
+            </td>
+        </tr>
+    </table>
+</form>
