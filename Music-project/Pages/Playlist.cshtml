@@ -4,6 +4,8 @@
 @{
     // public DataSet GetAllSongs()
 
+    //if (ds != null)
+    //ds = new DataSet("playlist");
     DataSet ds = new DataSet("playlist");
 
     DataTable songs = new DataTable("song");
@@ -53,7 +55,8 @@
             <td>@dr["artist"]</td>
             <td>@dr["title"]</td>
             <td>@dr["year"]</td>
+            <td><a asp-page="/DeleteSong"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a asp-page="/EditSong"><i class="fa-solid fa-pen-to-square"></i></a></td>
         </tr>
     }
-        
 </table>
