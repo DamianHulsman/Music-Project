@@ -1,4 +1,6 @@
 ﻿@page
+@using Music_project.NewFolder
+@using System.Data
 @model Music_project.Pages.addsongModel
 @{
 
@@ -10,6 +12,14 @@
         string song = Request.Form["song"];
         string artist = Request.Form["artist"];
         string YOR = Request.Form["YOR"];
+
+        //gegevens in een datarow zetten
+        songMethods sm = new songMethods();
+        DataRow newDr = sm.GetEmptyDataRow();
+        newDr["id"] = id;
+        newDr["song"] = song;
+        newDr["artist"] = artist;
+        newDr["YOR"] = YOR;
 
 
     }

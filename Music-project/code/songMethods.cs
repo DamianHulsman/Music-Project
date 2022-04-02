@@ -4,7 +4,7 @@ namespace Music_project.NewFolder
 {
     public class songMethods
     {
-        DataSet ds = new DataSet("playlist");
+        private DataSet ds = new DataSet("playlist");
         public DataSet GetAllSongs(string file)
         {
            // DataSet ds = new DataSet("playlist");
