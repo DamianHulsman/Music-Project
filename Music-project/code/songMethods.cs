@@ -28,7 +28,7 @@ namespace Music_project.NewFolder
             ds.Tables.Add(dtSongs);
             try
             {
-                // ds.ReadXml(Environment.CurrentDirectory + playlist.xml);
+                 ds.ReadXml(Environment.CurrentDirectory + "/Data/playlist.xml");
             }
             catch
             { }

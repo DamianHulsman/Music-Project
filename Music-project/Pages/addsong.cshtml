@@ -15,18 +15,19 @@
 
         //gegevens in een datarow zetten
         songMethods sm = new songMethods();
+        sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
         DataRow newDr = sm.GetEmptyDataRow();
         newDr["id"] = id;
-        newDr["song"] = song;
+        newDr["title"] = song;
         newDr["artist"] = artist;
-        newDr["YOR"] = YOR;
+        newDr["year"] = YOR;
 
-
+        sm.AddNewRow(newDr);
     }
 
 }
 
-
+<form method="post">
 <table class="table table-hover table-striped">
 <tr>
         <td>
@@ -61,3 +62,4 @@
         </td>
     </tr>
 </table>
+</form>

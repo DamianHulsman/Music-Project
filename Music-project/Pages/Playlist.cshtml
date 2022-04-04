@@ -1,28 +1,11 @@
 ﻿@page
 @using System.Data
+@using Music_project.NewFolder
 @model Music_project.Pages.PlaylistModel
-@{
-    // public DataSet GetAllSongs()
-
-    //if (ds != null)
-    //ds = new DataSet("playlist");
-    DataSet ds = new DataSet("playlist");
-
-    DataTable songs = new DataTable("song");
-
-    DataColumn id = new DataColumn("id");
-    DataColumn artist = new DataColumn("artist");
-    DataColumn title = new DataColumn("title");
-    DataColumn year = new DataColumn("year");
-
-    songs.Columns.Add(id);
-    songs.Columns.Add(artist);
-    songs.Columns.Add(title);
-    songs.Columns.Add(year);
-
-    ds.Tables.Add(songs);
-
-    ds.ReadXml("Data/playlist.xml");
+@{ 
+    songMethods sm = new songMethods();
+     DataSet ds =   sm.GetAllSongs(Environment.CurrentDirectory + "/Data/playlist.xml");
+   
 
 
 }
