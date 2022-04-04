@@ -45,5 +45,6 @@ namespace Music_project.NewFolder
             ds.Tables["song"].Rows.Add(dr);
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
         }
+
     }
 }
