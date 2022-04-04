@@ -1,0 +1,33 @@
+﻿@page
+@using Music_project.NewFolder
+@using System.Data
+@model Music_project.Pages.XML.IndexModel
+@{
+    ViewData["Title"] = "Verwijder een muzieknummer";
+
+    //XML
+    songMethods xmlSongMethods = new songMethods();
+    string xmlFile = @"\Data\Playlist.xml";
+    DataSet xmlDataSet = xmlSongMethods.GetAllSongs(xmlFile);
+
+    if (HttpMethods.IsPost(Request.Method))
+    {
+        if (Request.Form["inputOptie"] == "ja")
+        {
+            string id = Request.Query["id"];
+            xmlSongMethods.DeleteSong(id, xmlFile);
+        }
+
+        Response.Redirect("/XML/Index");
+    }
+
+    public void DeleteSong(string id, string file)
+    {
+        DataRow[] drSongs = ds.Tables["song"].Select("id = '" + id + "'");
+        if (drSongs != null && drSongs.Length > 0)
+        {
+            drSongs[0].Delete();
+            ds.WriteXml(Environment.CurrentDirectory + file);
+        }
+    }
+}
