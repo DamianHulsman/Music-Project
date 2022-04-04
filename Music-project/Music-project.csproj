@@ -7,8 +7,4 @@
     <RootNamespace>Music_project</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\XML\" />
-  </ItemGroup>
-
 </Project>
