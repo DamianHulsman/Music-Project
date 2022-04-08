@@ -45,6 +45,14 @@ namespace Music_project.NewFolder
             ds.Tables["song"].Rows.Add(dr);
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
         }
-
+        public void DeleteSong(string id, string file)
+        {
+            DataRow[] drSongs = ds.Tables["song"].Select("id = '" + id + "'");
+            if (drSongs != null && drSongs.Length > 0)
+            {
+                drSongs[0].Delete();
+                ds.WriteXml(Environment.CurrentDirectory + file);
+            }
+        }
     }
 }
