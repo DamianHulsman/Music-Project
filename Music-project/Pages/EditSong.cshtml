@@ -1,0 +1,62 @@
+﻿@page
+@using Music_project.NewFolder
+@using System.Data
+@model Music_project.Pages.XML.IndexModel
+@{
+    ViewData["Title"] = "Verwijder een muzieknummer";
+
+    //XML
+    songMethods xmlSongMethods = new songMethods();
+    string xmlFile = @"\Data\Playlist.xml";
+    DataSet xmlDataSet = xmlSongMethods.GetAllSongs(xmlFile);
+
+    if (HttpMethods.IsPost(Request.Method))
+    {
+        if (Request.Form["inputOptie"] == "ja")
+        {
+            string id = Request.Query["id"];
+            //xmlSongMethods.DeleteSong(id, xmlFile);
+        }
+
+      //  Response.Redirect("/XML/Index");
+    }
+}
+
+<H1> GOEIE EDIT van @Request.Query["id"]</H1>
+
+<form method="post">
+<table class="table table-hover table-striped">
+<tr>
+        <td>
+            <label>id</label>
+        </td>
+        <td>
+            <input name="id" type="text" />
+        </td>
+    </tr><tr>
+        <td>
+            <label>song</label>
+        </td><td>
+            <input name="song" type="text">
+        </td>
+    </tr><tr>
+        <td>
+            <label>artist</label>
+        </td>
+        <td>
+            <input name="artist" type="text" />
+        </td>
+    </tr><tr>
+        <td>
+            <label>Year of release</label>
+        </td><td>
+            <input name="YOR" type="text">
+        </td>
+    </tr><tr>
+        <td></td>
+        <td>
+            <input type="submit" />
+        </td>
+    </tr>
+</table>
+</form>
