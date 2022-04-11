@@ -40,6 +40,15 @@ namespace Music_project.NewFolder
             DataRow dr = ds.Tables["song"].NewRow();
             return dr;
         }
+        public DataRow getDataRow(string id)
+        {
+            DataRow[] drSongs = ds.Tables["song"].Select("id = '" + id + "'");
+            if (drSongs != null && drSongs.Length > 0)
+            {
+                return drSongs[0];
+            }
+            return null;    
+        }
         public void AddNewRow(DataRow dr)
         {
             ds.Tables["song"].Rows.Add(dr);
@@ -56,16 +65,15 @@ namespace Music_project.NewFolder
         }
         public void EditSong(string id, DataRow editedRow, string file)
         {
-            DataRow[] drSongs = ds.Tables["song"].Select("id = '" + id + "'");
-            if (drSongs != null && drSongs.Length > 0)
-            {
-                drSongs[0]["id"] = editedRow["id"];
-                drSongs[0]["artist"] = editedRow["artist"];
-                drSongs[0]["title"] = editedRow["title"];
-                drSongs[0]["year"] = editedRow["year"];
+            DataRow drSongs =getDataRow(id);
+
+                drSongs["id"] = editedRow["id"];
+                drSongs["artist"] = editedRow["artist"];
+                drSongs["title"] = editedRow["title"];
+                drSongs["year"] = editedRow["year"];
 
                 ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
-            }
+            
         }
     }
 }

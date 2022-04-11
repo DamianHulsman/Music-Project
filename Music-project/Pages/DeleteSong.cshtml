@@ -17,6 +17,10 @@
             string id = Request.Query["id"];
             xmlSongMethods.DeleteSong(id, xmlFile);
         }
+        if ( Request.Form["inputOptie"] == "nee")
+        {
+            Response.Redirect("/Playlist");
+        }
 
       Response.Redirect("/Playlist");
     }
