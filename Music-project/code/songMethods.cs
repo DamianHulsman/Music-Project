@@ -49,6 +49,10 @@ namespace Music_project.NewFolder
             }
             return null;    
         }
+        public void Save(string file)
+        {
+            ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
+        }
         public void AddNewRow(DataRow dr)
         {
             ds.Tables["song"].Rows.Add(dr);
@@ -65,7 +69,7 @@ namespace Music_project.NewFolder
         }
         public void EditSong(string id, DataRow editedRow, string file)
         {
-            DataRow drSongs =getDataRow(id);
+            DataRow drSongs = getDataRow(id);
 
                 drSongs["id"] = editedRow["id"];
                 drSongs["artist"] = editedRow["artist"];
