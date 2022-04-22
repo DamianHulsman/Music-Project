@@ -1,16 +1,17 @@
 {
-  {
-    "song": {
+  "song": [
+    
+    {
       "id": 10,
       "artist": "U2",
       "title": "One",
       "Year": 1991
     },
-    "song": {
+    {
       "id": 9,
       "artist": "Imagine Dragons",
       "title": "Bones",
       "year": 2022
     }
-  }
+  ]
 }
