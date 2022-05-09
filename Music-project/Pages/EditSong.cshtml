@@ -12,13 +12,21 @@
 
     if (HttpMethods.IsPost(Request.Method))
     {
-        if (Request.Form["inputOptie"] == "ja")
-        {
-            string id = Request.Query["id"];
-            //xmlSongMethods.DeleteSong(id, xmlFile);
-        }
+        //gegevens uit het formulier halen.
+        string id = Request.Form["id"];
+        string song = Request.Form["song"];
+        string artist = Request.Form["artist"];
+        string YOR = Request.Form["YOR"];
 
-      //  Response.Redirect("/XML/Index");
+        DataRow newDr = xmlSongMethods.GetEmptyDataRow();
+        newDr["id"] = id;
+        newDr["title"] = song;
+        newDr["artist"] = artist;
+        newDr["year"] = YOR;
+
+
+        xmlSongMethods.EditSong(id, newDr, xmlFile);
+        Response.Redirect("/Playlist");
     }
 }
 

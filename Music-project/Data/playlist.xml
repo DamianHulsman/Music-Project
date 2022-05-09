@@ -2,14 +2,8 @@
 <playlist>
   <song>
     <id>10</id>
-    <artist>u2</artist>
-    <title>one</title>
-    <year>1991</year>
-  </song>
-  <song>
-    <id>9</id>
-    <artist>imagine dragons</artist>
-    <title>bones</title>
-    <year>2022</year>
+    <artist />
+    <title>two</title>
+    <year />
   </song>
 </playlist>
