@@ -1,11 +1,12 @@
-﻿using System.Data;
+﻿using Music_project.code;
+using System.Data;
 
 namespace Music_project.NewFolder
 {
     public class songMethods
     {
         private DataSet ds = new DataSet("playlist");
-        public DataSet GetAllSongs(string file)
+        public List<Song> GetAllSongs(string file)
         {
            // DataSet ds = new DataSet("playlist");
 
@@ -32,7 +33,18 @@ namespace Music_project.NewFolder
             }
             catch
             { }
-            return ds;
+
+            List<Song> songsList = new List<Song>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Song x = new Song();
+                x.id = int.Parse(dr["id"].ToString());
+                x.title = dr["title"].ToString();
+                x.artist = dr["artist"].ToString();
+                songsList.Add(x);
+            }
+            //return ds;
         }
 
         public DataRow GetEmptyDataRow()
