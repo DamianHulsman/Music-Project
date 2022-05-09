@@ -1,11 +1,12 @@
-﻿using System.Data;
+﻿using Music_project.code;
+using System.Data;
 
 namespace Music_project.NewFolder
 {
     public class songMethods
     {
         private DataSet ds = new DataSet("playlist");
-        public DataSet GetAllSongs(string file)
+        public List<Song> GetAllSongs(string file)
         {
            // DataSet ds = new DataSet("playlist");
 
@@ -32,6 +33,12 @@ namespace Music_project.NewFolder
             }
             catch
             { }
+
+            List<song> songList = new List<song>();
+            foreach(DataRow dr in ds.Tables[0].Rows)
+            {
+                Song x 
+            }
             return ds;
         }
 
