@@ -34,12 +34,17 @@ namespace Music_project.NewFolder
             catch
             { }
 
-            List<song> songList = new List<song>();
-            foreach(DataRow dr in ds.Tables[0].Rows)
+            List<Song> songsList = new List<Song>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                Song x 
+                Song x = new Song();
+                x.id = int.Parse(dr["id"].ToString());
+                x.title = dr["title"].ToString();
+                x.artist = dr["artist"].ToString();
+                songsList.Add(x);
             }
-            return ds;
+            //return ds;
         }
 
         public DataRow GetEmptyDataRow()

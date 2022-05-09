@@ -2,5 +2,8 @@
 {
     public class Song
     {
+        public string id;
+        public string artist;
+        public string title;
     }
 }
