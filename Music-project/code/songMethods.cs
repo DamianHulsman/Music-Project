@@ -44,7 +44,7 @@ namespace Music_project.NewFolder
                 x.artist = dr["artist"].ToString();
                 songsList.Add(x);
             }
-            //return ds;
+            return songsList;
         }
 
         public DataRow GetEmptyDataRow()

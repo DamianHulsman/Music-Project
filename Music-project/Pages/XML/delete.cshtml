@@ -1,6 +1,7 @@
 ﻿@page
 @using Music_project.NewFolder
 @using System.Data
+@using Music_project.code
 @model Music_project.Pages.XML.IndexModel
 @{
     ViewData["Title"] = "Verwijder een muzieknummer";
@@ -8,7 +9,7 @@
     //XML
     songMethods xmlSongMethods = new songMethods();
     string xmlFile = @"\Data\Playlist.xml";
-    DataSet xmlDataSet = xmlSongMethods.GetAllSongs(xmlFile);
+    List<Song> liedjes = xmlSongMethods.GetAllSongs(xmlFile);
 
     if (HttpMethods.IsPost(Request.Method))
     {
