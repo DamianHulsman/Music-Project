@@ -39,7 +39,7 @@ namespace Music_project.NewFolder
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Song x = new Song();
-                x.id = int.Parse(dr["id"].ToString());
+                x.id = dr["id"].ToString();
                 x.title = dr["title"].ToString();
                 x.artist = dr["artist"].ToString();
                 songsList.Add(x);
