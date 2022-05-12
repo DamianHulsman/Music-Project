@@ -87,8 +87,8 @@ namespace Music_project.NewFolder
                 drSongs["artist"] = editedRow["artist"];
                 drSongs["title"] = editedRow["title"];
                 drSongs["year"] = editedRow["year"];
-
-                ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
+   
+            ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
             
         }
     }
