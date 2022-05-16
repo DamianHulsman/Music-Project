@@ -7,6 +7,7 @@
         {
             title = "leeg";
             artist = "leeg";
+            year = "leeg";
         }
 
         public string id;
