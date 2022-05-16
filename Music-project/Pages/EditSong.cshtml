@@ -7,7 +7,12 @@
     ViewData["Title"] = "Edit een muzieknummer";
 
     //XML
-    songMethods xmlSongMethods = new songMethods();
+
+
+
+    songMethods xmlSongMethods = new songMethods(song);
+
+
     string xmlFile = @"\Data\Playlist.xml";
     List<Song> liedjes = xmlSongMethods.GetAllSongs(xmlFile);
 
@@ -46,20 +51,20 @@
         <td>
             <label>song</label>
         </td><td>
-            <input name="song" type="text">
+            <input name="song" type="text" value="@Request.Query["title"]"/>
         </td>
     </tr><tr>
         <td>
             <label>artist</label>
         </td>
         <td>
-            <input name="artist" type="text" />
+            <input name="artist" type="text" value="@Request.Query["artist"]"/>
         </td>
     </tr><tr>
         <td>
             <label>Year of release</label>
         </td><td>
-            <input name="YOR" type="text">
+            <input name="YOR" type="text" value="@Request.Query["year"]"/>
         </td>
     </tr><tr>
         <td></td>

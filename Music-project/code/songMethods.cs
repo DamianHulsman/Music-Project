@@ -6,10 +6,8 @@ namespace Music_project.NewFolder
     public class songMethods
     {
         private DataSet ds = new DataSet("playlist");
-        public List<Song> GetAllSongs(string file)
+        public songMethods(string file)
         {
-           // DataSet ds = new DataSet("playlist");
-
             DataTable dtSongs = new DataTable("song");
 
             DataColumn dcId = new DataColumn("id");
@@ -25,6 +23,12 @@ namespace Music_project.NewFolder
             dtSongs.Columns.Add(dcYear);
             dtSongs.Columns.Add(dcGenre);
             dtSongs.Columns.Add(dcTime);
+        }
+        public List<Song> GetAllSongs(string file)
+        {
+           // DataSet ds = new DataSet("playlist");
+
+            
 
             ds.Tables.Add(dtSongs);
             try
