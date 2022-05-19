@@ -8,15 +8,14 @@
 
     //XML
     songMethods xmlSongMethods = new songMethods();
-    string xmlFile = @"\Data\Playlist.xml";
-    List<Song> liedjes = xmlSongMethods.GetAllSongs(xmlFile);
+    List<Song> liedjes = xmlSongMethods.GetAllSongs();
 
     if (HttpMethods.IsPost(Request.Method))
     {
         if (Request.Form["inputOptie"] == "ja")
         {
             string id = Request.Query["id"];
-            xmlSongMethods.DeleteSong(id, xmlFile);
+            //xmlSongMethods.DeleteSong(id, xmlFile);
         }
 
         Response.Redirect("/XML/Index");

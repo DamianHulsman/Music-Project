@@ -7,13 +7,13 @@
         {
             title = "leeg";
             artist = "leeg";
-            year = "leeg";
+            year = 0;
         }
 
-        public string id;
+        public int id;
         public string artist;
         public string title;
-        public string year;
+        public int year;
 
         public void Afspelen()
         {

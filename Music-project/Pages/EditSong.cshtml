@@ -10,28 +10,20 @@
 
 
 
-    songMethods xmlSongMethods = new songMethods(Song);
+    songMethods jsonSM = new songMethods();
 
 
-    string xmlFile = @"\Data\Playlist.xml";
-    List<Song> liedjes = xmlSongMethods.GetAllSongs(xmlFile);
+    List<Song> liedjes = jsonSM.GetAllSongs();
 
     if (HttpMethods.IsPost(Request.Method))
     {
         //gegevens uit het formulier halen.
-        string id = Request.Form["id"];
-        string song = Request.Form["song"];
-        string artist = Request.Form["artist"];
-        string YOR = Request.Form["YOR"];
-
-        DataRow newDr = xmlSongMethods.GetEmptyDataRow();
-        newDr["id"] = id;
-        newDr["title"] = song;
-        newDr["artist"] = artist;
-        newDr["year"] = YOR;
-
-
-        xmlSongMethods.EditSong(id, newDr, xmlFile);
+        Song s = jsonSM.getSong(int.Parse(Request.Form["id"]));
+        //s.id = Request.Form["id"];
+        s.title = Request.Form["song"];
+        s.artist = Request.Form["artist"];
+        s.year = int.Parse(Request.Form["year"]);
+        jsonSM.WriteDataToFile();
         Response.Redirect("/Playlist");
     }
 }
@@ -45,7 +37,7 @@
             <label>id</label>
         </td>
         <td>
-            <input name="id" type="text" value="@Request.Query["id"]"/>
+            <input name="id" type="text" value="@Request.Query["id"]" readonly/>
         </td>
     </tr><tr>
         <td>

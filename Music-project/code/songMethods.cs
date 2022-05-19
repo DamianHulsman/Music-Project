@@ -25,51 +25,21 @@ namespace Music_project.NewFolder
 
 
         private DataSet ds = new DataSet("playlist");
-        public songMethods(string file)
+        public List<Song> GetAllSongs()
         {
-            DataTable dtSongs = new DataTable("song");
-
-            DataColumn dcId = new DataColumn("id");
-            DataColumn dcArtist = new DataColumn("artist");
-            DataColumn dcTitle = new DataColumn("title");
-            DataColumn dcYear = new DataColumn("year");
-            DataColumn dcGenre = new DataColumn("genre");
-            DataColumn dcTime = new DataColumn("time");
-
-            dtSongs.Columns.Add(dcId);
-            dtSongs.Columns.Add(dcArtist);
-            dtSongs.Columns.Add(dcTitle);
-            dtSongs.Columns.Add(dcYear);
-            dtSongs.Columns.Add(dcGenre);
-            dtSongs.Columns.Add(dcTime);
+            return songList;
         }
-        public List<Song> GetAllSongs(string file)
+        public Song getSong(int id)
         {
-           // DataSet ds = new DataSet("playlist");
-
-            
-
-            ds.Tables.Add(dtSongs);
-            try
+            foreach(Song song in songList)
             {
-                 ds.ReadXml(Environment.CurrentDirectory + "/Data/playlist.xml");
+                if (song.id == id)
+                {
+                    return song;
+                }
             }
-            catch
-            { }
-
-            List<Song> songsList = new List<Song>();
-
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-                Song x = new Song();
-                x.id = dr["id"].ToString();
-                x.title = dr["title"].ToString();
-                x.artist = dr["artist"].ToString();
-                songsList.Add(x);
-            }
-            return songsList;
+            return null;
         }
-
         public DataRow GetEmptyDataRow()
         {
             DataRow dr = ds.Tables["song"].NewRow();
@@ -114,9 +84,9 @@ namespace Music_project.NewFolder
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
             
         }
-        private void WriteDataToFile()
+        public void WriteDataToFile()
         {
-            string json = JsonConvert.SerializeObject(songslist);
+            string json = JsonConvert.SerializeObject(songList);
             File.WriteAllText(filename, json);
         }
     }

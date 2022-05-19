@@ -9,7 +9,7 @@
     //XML
     songMethods xmlSongMethods = new songMethods();
     string xmlFile = @"\Data\Playlist.xml";
-    List<Song> liedjes = xmlSongMethods.GetAllSongs(xmlFile);
+    List<Song> liedjes = xmlSongMethods.GetAllSongs();
 
     if (HttpMethods.IsPost(Request.Method))
     {

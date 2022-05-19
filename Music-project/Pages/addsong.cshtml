@@ -15,7 +15,7 @@
 
         //gegevens in een datarow zetten
         songMethods sm = new songMethods();
-        sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
+        //sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
         DataRow newDr = sm.GetEmptyDataRow();
         newDr["id"] = id;
         newDr["title"] = song;
