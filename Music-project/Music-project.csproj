@@ -11,4 +11,8 @@
     <None Remove="Pages\deletecshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="code\XML\" />
+  </ItemGroup>
+
 </Project>
