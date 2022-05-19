@@ -5,6 +5,24 @@ namespace Music_project.NewFolder
 {
     public class songMethods
     {
+        public songMethods()
+        {
+            try
+            {
+                string jsonString = File.ReadAllText(filename);
+                songList = JsonConvert.DeserializeObject<List<Song>>(jsonString);
+            }
+            catch
+            {
+
+            }
+        }
+
+        //variabelen
+        private List<Song> songList = null;
+        private string filename = Environment.CurrentDirectory + "\\Data\\playlist.json";
+
+
         private DataSet ds = new DataSet("playlist");
         public songMethods(string file)
         {
@@ -94,6 +112,11 @@ namespace Music_project.NewFolder
    
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
             
+        }
+        private void WriteDataToFile()
+        {
+            string json = JsonConvert.SerializeObject(songslist);
+            File.WriteAllText(filename, json);
         }
     }
 }
