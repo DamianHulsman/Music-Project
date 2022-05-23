@@ -63,12 +63,12 @@ namespace Music_project.NewFolder
         }
         public void Save()
         {
-            string json = JsonConvert.SerializeObject(Song);
+            string json = JsonConvert.SerializeObject(songList);
             File.WriteAllText(filename, json);
 
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
         }
-        public void AddNewRow(DataRow dr)
+        public void AddNewRow(Song dr)
         {
             ds.Tables["song"].Rows.Add(dr);
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
