@@ -19,12 +19,13 @@
         //sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
         //DataRow newDr = sm.GetEmptyDataRow();
         Song newsong = new Song();
-        newDr["id"] = id;
-        newDr["title"] = song;
-        newDr["artist"] = artist;
-        newDr["year"] = YOR;
+        newsong.id = id;
+        newsong.title = song;
+        newsong.artist = artist;
+        newsong.year = YOR;
+        
 
-        sm.AddNewRow(newDr);
+        sm.AddNewRow(newsong);
 
         Response.Redirect("Playlist");
     }
