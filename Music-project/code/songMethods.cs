@@ -6,10 +6,13 @@ namespace Music_project.NewFolder
 {
     public class songMethods
     {
+        private DataSet dsSongs;
+        private List<Song> lssongs;
+        string xmlfile;
         public songMethods()
         {
             string json = File.ReadAllText(filename);
-            lsSongs = JsonConvert.DeserializeObject<List<Song>>(json);
+            lssongs = JsonConvert.DeserializeObject<List<Song>>(json);
 
 
             try
@@ -60,7 +63,7 @@ namespace Music_project.NewFolder
         }
         public void Save()
         {
-            string json = JsonConvert.SerializeObject(lsSongs);
+            string json = JsonConvert.SerializeObject(Song);
             File.WriteAllText(filename, json);
 
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
