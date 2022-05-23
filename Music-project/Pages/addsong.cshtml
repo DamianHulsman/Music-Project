@@ -1,6 +1,7 @@
 ﻿@page
 @using Music_project.NewFolder
 @using System.Data
+@using Music_project.code
 @model Music_project.Pages.addsongModel
 @{
 
@@ -16,7 +17,8 @@
         //gegevens in een datarow zetten
         songMethods sm = new songMethods();
         //sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
-        DataRow newDr = sm.GetEmptyDataRow();
+        //DataRow newDr = sm.GetEmptyDataRow();
+        Song newsong = new Song();
         newDr["id"] = id;
         newDr["title"] = song;
         newDr["artist"] = artist;
