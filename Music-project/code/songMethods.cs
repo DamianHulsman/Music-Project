@@ -8,6 +8,10 @@ namespace Music_project.NewFolder
     {
         public songMethods()
         {
+            string json = File.ReadAllText(filename);
+            lsSongs = JsonConvert.DeserializeObject<List<Song>>(json);
+
+
             try
             {
                 string jsonString = File.ReadAllText(filename);
@@ -54,8 +58,11 @@ namespace Music_project.NewFolder
             }
             return null;    
         }
-        public void Save(string file)
+        public void Save()
         {
+            string json = JsonConvert.SerializeObject(lsSongs);
+            File.WriteAllText(filename, json);
+
             ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
         }
         public void AddNewRow(DataRow dr)
@@ -88,6 +95,10 @@ namespace Music_project.NewFolder
         {
             string json = JsonConvert.SerializeObject(songList);
             File.WriteAllText(filename, json);
+        }
+        public void CreateSong(Song song)
+        {
+
         }
     }
 }
