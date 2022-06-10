@@ -70,8 +70,8 @@ namespace Music_project.NewFolder
         }
         public void AddNewRow(Song dr)
         {
-            ds.Tables["song"].Rows.Add(dr);
-            ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
+            //ds.Tables["song"].Rows.Add(dr);
+            //ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
         }
         public void DeleteSong(string id, string file)
         {

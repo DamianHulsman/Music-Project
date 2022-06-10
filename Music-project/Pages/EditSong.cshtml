@@ -20,7 +20,7 @@
         //s.id = Request.Form["id"];
         s.title = Request.Form["song"];
         s.artist = Request.Form["artist"];
-        s.year = int.Parse(Request.Form["year"]);
+        s.year = int.Parse(Request.Form["YOR"]);
         jsonSM.WriteDataToFile();
         Response.Redirect("/Playlist");
     }
@@ -37,24 +37,28 @@
         <td>
             <input name="id" type="text" value="@Request.Query["id"]" readonly/>
         </td>
-    </tr><tr>
-        <td>
-            <label>song</label>
-        </td><td>
-            <input name="song" type="text" value="@Request.Query["title"]"/>
-        </td>
-    </tr><tr>
+    </tr>
+    <tr>
         <td>
             <label>artist</label>
         </td>
         <td>
             <input name="artist" type="text" value="@Request.Query["artist"]"/>
         </td>
-    </tr><tr>
+    </tr>
+    <tr>
+        <td>
+            <label>song</label>
+        </td><td>
+            <input name="song" type="text" value="@Request.Query["title"]"/>
+        </td>
+    </tr>
+    
+    <tr>
         <td>
             <label>Year of release</label>
         </td><td>
-            <input name="YOR" type="text" value="@Request.Query["year"]"/>
+            <input name="YOR" type="number" value="@Request.Query["year"]"/>
         </td>
     </tr><tr>
         <td></td>

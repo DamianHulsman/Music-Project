@@ -16,6 +16,8 @@
 
         //gegevens in een datarow zetten
         songMethods sm = new songMethods();
+        
+        
         //sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
         //DataRow newDr = sm.GetEmptyDataRow();
         Song newsong = new Song();
@@ -60,7 +62,15 @@
         </td><td>
             <input name="YOR" type="text">
         </td>
-    </tr><tr>
+    </tr>
+    <tr>
+        <td>
+            <label>Audio file</label>
+        </td><td>
+            <input name="file" type="file">
+        </td>
+    </tr>
+    <tr>
         <td></td>
         <td>
             <input type="submit" />
