@@ -75,12 +75,14 @@ namespace Music_project.NewFolder
         }
         public void DeleteSong(string id, string file)
         {
-            DataRow[] drSongs = ds.Tables["song"].Select("id = '" + id + "'");
-            if (drSongs != null && drSongs.Length > 0)
-            {
-                drSongs[0].Delete();
-                ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
-            }
+            //DataRow[] drSongs = ds.Tables["song"].Select("id = '" + id + "'");
+            //if (drSongs != null && drSongs.Length > 0)
+            //{
+            //    drSongs[0].Delete();
+            //    //ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
+            //}
+            songList.Remove(getSong(int.Parse(id)));
+            WriteDataToFile();
         }
         public void EditSong(string id, DataRow editedRow, string file)
         {
