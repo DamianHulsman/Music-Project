@@ -13,6 +13,7 @@
         public int id;
         public string artist;
         public string title;
+        public string url;
         public int year;
 
         public void Afspelen()

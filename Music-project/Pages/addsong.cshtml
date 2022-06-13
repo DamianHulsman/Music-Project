@@ -13,11 +13,12 @@
         string song = Request.Form["song"];
         string artist = Request.Form["artist"];
         string YOR = Request.Form["YOR"];
+        string url = Request.Form["url"];
 
         //gegevens in een datarow zetten
         songMethods sm = new songMethods();
-        
-        
+
+
         //sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
         //DataRow newDr = sm.GetEmptyDataRow();
         Song newsong = new Song();
@@ -25,7 +26,8 @@
         newsong.title = song;
         newsong.artist = artist;
         newsong.year = int.Parse(YOR);
-        
+        newsong.url = url;
+
 
         sm.AddNewRow(newsong);
 

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="code\XML\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
   <ItemGroup>
