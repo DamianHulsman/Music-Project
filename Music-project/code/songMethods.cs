@@ -6,7 +6,7 @@ namespace Music_project.NewFolder
 {
     public class songMethods
     {
-        private DataSet dsSongs;
+      
         private List<Song> lssongs;
         string xmlfile;
         public songMethods()
@@ -31,7 +31,7 @@ namespace Music_project.NewFolder
         private string filename = Environment.CurrentDirectory + "\\Data\\playlist.json";
 
 
-        private DataSet ds = new DataSet("playlist");
+
         public List<Song> GetAllSongs()
         {
             return songList;
@@ -47,30 +47,18 @@ namespace Music_project.NewFolder
             }
             return null;
         }
-        public DataRow GetEmptyDataRow()
-        {
-            DataRow dr = ds.Tables["song"].NewRow();
-            return dr;
-        }
-        public DataRow getDataRow(string id)
-        {
-            DataRow[] drSongs = ds.Tables["song"].Select("id = '" + id + "'");
-            if (drSongs != null && drSongs.Length > 0)
-            {
-                return drSongs[0];
-            }
-            return null;    
-        }
+     
+      
         public void Save()
         {
             string json = JsonConvert.SerializeObject(songList);
             File.WriteAllText(filename, json);
 
-            ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
+          
         }
-        public void AddNewRow(Song dr)
+        public void AddNewRow(Song s)
         {
-            songList.Add(dr);
+            songList.Add(s);
             WriteDataToFile();
         }
         public void DeleteSong(string id, string file)
@@ -78,26 +66,10 @@ namespace Music_project.NewFolder
             songList.Remove(getSong(int.Parse(id)));
             WriteDataToFile();
         }
-        public void EditSong(string id, DataRow editedRow, string file)
-        {
-            DataRow drSongs = getDataRow(id);
-
-                drSongs["id"] = editedRow["id"];
-                drSongs["artist"] = editedRow["artist"];
-                drSongs["title"] = editedRow["title"];
-                drSongs["year"] = editedRow["year"];
-   
-            ds.WriteXml(Environment.CurrentDirectory + "/Data/playlist.xml");
-            
-        }
         public void WriteDataToFile()
         {
             string json = JsonConvert.SerializeObject(songList);
             File.WriteAllText(filename, json);
-        }
-        public void CreateSong(Song song)
-        {
-
         }
     }
 }
