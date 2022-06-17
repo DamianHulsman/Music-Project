@@ -36,7 +36,7 @@
 
 }
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 <table class="table table-hover table-striped">
 <tr>
         <td>
@@ -69,7 +69,7 @@
         <td>
             <label>Audio file</label>
         </td><td>
-            <input name="file" type="file">
+            <input name="ofile" type="file" asp-page-handler="Upload" />
         </td>
     </tr>
     <tr>
