@@ -13,7 +13,9 @@
         public int id;
         public string artist;
         public string title;
-        public string url;
+        public string url = null;
+        public string time;
+        public string genre;
         public int year;
 
         public void Afspelen()

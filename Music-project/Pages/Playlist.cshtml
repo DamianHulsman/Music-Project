@@ -11,14 +11,13 @@
 
 }
     <link rel='stylesheet' href="~/lib/font-awesome/css/all.css">
+    <style>
+        .addsong{
+            text-align: center;
+        }
+    </style>
 <header><h1>Dit is de playlist pagina</h1></header>
 <table id="playlisttable" class="table table-hover table-striped">
-    <tr>
-        <td></td>
-        <td>
-            <a asp-page="/addsong">Add song<i class="fa-solid fa-music"></i></a>
-        </td>
-    </tr>
     <tr>
         <td>
             id
@@ -31,6 +30,15 @@
         </td>
         <td>
             year of release
+        </td>
+        <td>
+            audio file
+        </td>
+        <td>
+            time
+        </td>
+        <td>
+            genre
         </td>
     </tr>   
     @foreach (Song s in liedjes)
@@ -50,8 +58,13 @@
                     }
                 }
             </td>
+            <td>@s.time</td>
+            <td>@s.genre</td>
             <td><a asp-page="/DeleteSong" asp-route-id="@s.id"><i class="fa-solid fa-trash-can"></i></a></td>
             <td><a asp-page="/EditSong" asp-route-id="@s.id" asp-route-artist="@s.artist" asp-route-title="@s.title" asp-route-year="@s.year"><i class="fa-solid fa-pen-to-square"></i></a></td>
         </tr>
     }
 </table>
+<div class="addsong">
+    <a asp-page="/addsong" class="addsong">Add song<i class="fa-solid fa-music"></i></a>
+</div>

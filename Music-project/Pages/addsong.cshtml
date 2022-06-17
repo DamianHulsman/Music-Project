@@ -13,20 +13,23 @@
         string song = Request.Form["song"];
         string artist = Request.Form["artist"];
         string YOR = Request.Form["YOR"];
-        string url = Request.Form["url"];
+        string time = Request.Form["time"];
+        string genre = Request.Form["genre"];
+        string url = Request.Form.Files[0].FileName;
 
         //gegevens in een datarow zetten
         songMethods sm = new songMethods();
 
 
         //sm.GetAllSongs( Environment.CurrentDirectory +"/Data/playlist.xml");
-        //DataRow newDr = sm.GetEmptyDataRow();
         Song newsong = new Song();
         newsong.id = int.Parse(id);
         newsong.title = song;
         newsong.artist = artist;
+        newsong.time = time;
         newsong.year = int.Parse(YOR);
         newsong.url = url;
+        newsong.genre = genre;
 
 
         sm.AddNewRow(newsong);
@@ -36,7 +39,7 @@
 
 }
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 <table class="table table-hover table-striped">
 <tr>
         <td>
@@ -45,20 +48,31 @@
         <td>
             <input name="id" type="text" />
         </td>
-    </tr><tr>
+    </tr>
+    <tr>
         <td>
             <label>song</label>
         </td><td>
             <input name="song" type="text">
         </td>
-    </tr><tr>
+    </tr>
+    <tr>
         <td>
             <label>artist</label>
         </td>
         <td>
             <input name="artist" type="text" />
         </td>
-    </tr><tr>
+    </tr>
+    <tr>
+        <td>
+            <label>genre</label>
+        </td>
+        <td>
+            <input name="genre" type="text" />
+        </td>
+    </tr>
+    <tr>
         <td>
             <label>Year of release</label>
         </td><td>
@@ -67,15 +81,23 @@
     </tr>
     <tr>
         <td>
-            <label>Audio file</label>
+            <label>Time</label>
         </td><td>
-            <input name="file" type="file">
+            <input name="time" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Audio file</label>
+        </td>
+        <td>
+            <input name="oFile" type="file" id="oFile">
         </td>
     </tr>
     <tr>
         <td></td>
         <td>
-            <input type="submit" />
+            <input type="submit" asp-page-handler="upload"/>
         </td>
     </tr>
 </table>
