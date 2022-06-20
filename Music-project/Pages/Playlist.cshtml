@@ -66,7 +66,11 @@
             </td>
             <td>@s.time</td>
             <td>@s.genre</td>
-            <td><a asp-page="/DeleteSong" asp-route-id="@s.id"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a 
+                asp-page="/DeleteSong" 
+                asp-route-id="@s.id">
+                <i class="fa-solid fa-trash-can"></i>
+            </a></td>
             <td><a 
                 asp-page="/EditSong" 
                 asp-route-id="@s.id" 
@@ -75,7 +79,8 @@
                 asp-route-year="@s.year"
                 asp-route-year="@s.time"
                 asp-route-title="@s.genre">
-            <i class="fa-solid fa-pen-to-square"></i></a></td>
+                <i class="fa-solid fa-pen-to-square"></i>
+            </a></td>
         </tr>
     }
 </table>
