@@ -1,1 +1,38 @@
-[{"id":1,"artist":"Rammstein","title":"Deutschland","url":"Rammstein_Deutschland.mp3","time":"3","genre":"rock","year":2019},{"id":2,"artist":"Rammstein","title":"Du Hast","url":"Rammstein - Du Hast.mp3","time":"3.56","genre":"Rock","year":1997},{"id":3,"artist":"ABBA","title":"Dancing Queen","url":"ABBA- Dancing Queen (With Lyrics).mp3","time":"3.46","genre":"Pop","year":1976}]
+[
+  {
+    "id": 1,
+    "artist": "Rammstein",
+    "title": "Deutschland",
+    "url": "Rammstein_Deutschland.mp3",
+    "time": "9:22",
+    "genre": "rock",
+    "year": 2019
+  },
+  {
+    "id": 2,
+    "artist": "Rammstein",
+    "title": "Du Hast",
+    "url": "Rammstein - Du Hast.mp3",
+    "time": "3.56",
+    "genre": "Rock",
+    "year": 1997
+  },
+  {
+    "id": 3,
+    "artist": "ABBA",
+    "title": "Dancing Queen",
+    "url": "ABBA- Dancing Queen (With Lyrics).mp3",
+    "time": "3.46",
+    "genre": "Pop",
+    "year": 1976
+  },
+  {
+    "id": 4,
+    "artist": "geen idee",
+    "title": "Rise up",
+    "url": "VINAI - Rise Up.mp3",
+    "time": "2.22",
+    "genre": "sdfds",
+    "year": 2022
+  }
+]
