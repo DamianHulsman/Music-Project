@@ -40,9 +40,9 @@
 }
 
 <form method="post" enctype="multipart/form-data">
-<table class="table table-hover table-striped">
+<table class="table table-hover table-striped" id="addsongtable">
 <tr>
-        <td>
+        <td class="addlabel">
             <label>id</label>
         </td>
         <td>
@@ -50,14 +50,14 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="addlabel">
             <label>song</label>
         </td><td>
             <input name="song" type="text">
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="addlabel">
             <label>artist</label>
         </td>
         <td>
@@ -65,7 +65,7 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="addlabel">
             <label>genre</label>
         </td>
         <td>
@@ -85,21 +85,21 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="addlabel">
             <label>Year of release</label>
         </td><td>
             <input name="YOR" type="text">
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="addlabel">
             <label>Time</label>
         </td><td>
             <input name="time" type="text">
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="addlabel">
             <label>Audio file</label>
         </td>
         <td>
@@ -107,9 +107,11 @@
         </td>
     </tr>
     <tr>
-        <td></td>
-        <td>
+        <td class="submit">
             <input type="submit" asp-page-handler="upload"/>
+        </td>
+        <td>
+            
         </td>
     </tr>
 </table>
