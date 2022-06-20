@@ -18,13 +18,12 @@ body {
 }
 
 /*Jonah CSS*/
-#playlisttable
-{
-    border:solid black 2px;
+#playlisttable {
+    border: solid black 2px;
+    font-family: 'Century Gothic';
 }
 
-#id
-{
+#id {
     margin:auto;
     bottom:0;
     right:0;
