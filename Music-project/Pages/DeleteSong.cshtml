@@ -27,11 +27,14 @@
     }
 }
 
-<H1> GOEIE DELETE van @Request.Query["id"]</H1>
+<H1> wilt u echt @Request.Query["title"] van @Request.Query["artist"] deleten?</H1>
 <br />
-<h3> Do you really want to delete it?</h3>
-<form method="post">
-    <input type="radio" name="inputOptie" value="ja">ja</input>
-    <input type="radio" name="inputOptie" value="nee">nee</input>
-    <input type="submit" />
-</form>
+<div>
+    <form method="post">
+        <input type="radio" name="inputOptie" value="ja"> ja</input>
+        <br />  
+        <input type="radio" name="inputOptie" value="nee"> nee</input>
+        <br />
+        <input type="submit" />
+    </form>
+</div>
