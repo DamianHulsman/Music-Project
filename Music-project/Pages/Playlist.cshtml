@@ -68,7 +68,9 @@
             <td>@s.genre</td>
             <td><a 
                 asp-page="/DeleteSong" 
-                asp-route-id="@s.id">
+                asp-route-id="@s.id" 
+                asp-route-title="@s.title">
+
                 <i class="fa-solid fa-trash-can"></i>
             </a></td>
             <td><a 
@@ -77,8 +79,8 @@
                 asp-route-artist="@s.artist" 
                 asp-route-title="@s.title" 
                 asp-route-year="@s.year"
-                asp-route-year="@s.time"
-                asp-route-title="@s.genre">
+                asp-route-time="@s.time"
+                asp-route-genre="@s.genre">
                 <i class="fa-solid fa-pen-to-square"></i>
             </a></td>
         </tr>
