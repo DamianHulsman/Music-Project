@@ -43,3 +43,12 @@ body {
     column-span: 1;
     
 }
+
+.submitbutton{
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.submitbutton:hover{
+    background-color: aquamarine;
+}
