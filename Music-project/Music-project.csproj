@@ -14,6 +14,7 @@
   <ItemGroup>
     <Folder Include="code\XML\" />
     <Folder Include="Pages\NewFolder\" />
+    <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
