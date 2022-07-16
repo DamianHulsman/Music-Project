@@ -71,12 +71,16 @@
         <td>
             <input name="genre" type="text" />
             @*<select>
-                    @{
-                        List<string> genres = new List<string>();
-                        genres.Add("Rock");
-                        genres.Add("Jazz");
-                        genres.Add("Pop");
-                    }
+                @{
+                    List<string> genres = new List<string>();
+                    genres.Add("Rock");
+                    genres.Add("Jazz");
+                    genres.Add("Pop");
+                    genres.Add("Metal");
+                    genres.Add("Electronic");
+                    genres.Add("Hardstyle");
+                    genres.Add("Hardcore");
+                }
                 @foreach (string g in genres)
                 {
                     <option>@g</option>
