@@ -32,7 +32,25 @@
     "title": "Rise up",
     "url": "VINAI - Rise Up.mp3",
     "time": "2.22",
-    "genre": "remix",
+    "genre": "pop",
     "year": 2022
+  },
+  {
+    "id": 5,
+    "artist": "Rick Astley",
+    "title": "Never gonna give you up",
+    "url": "Rick Astley - Never Gonna Give You Up (Official Music Video).mp3",
+    "time": "3.32",
+    "genre": "pop",
+    "year": 1987
+  },
+  {
+    "id": 6,
+    "artist": "AC-DC",
+    "title": "Highway to Hell",
+    "url": "AC_DC - Highway to Hell (1).mp3",
+    "time": "nvt",
+    "genre": "Rock",
+    "year": 1979
   }
 ]
